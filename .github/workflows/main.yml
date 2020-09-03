@@ -2,20 +2,14 @@ name: Main
 on: [push]
 
 jobs:
-  build:
-    name: build (test)
+  test:
+    name: go test
     runs-on: ubuntu-latest
     container:
       image: golang:1.14.1
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: build
+      - name: run test
         run: |
-          go build
-      - name: upload
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-command
-          path: |
-            actions-playground
+          go test
