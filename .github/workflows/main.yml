@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
       - name: enable problem matcher
         run: |
-          echo "::add-matcher::go-test-problem-matcher.json"
+          echo "::add-matcher::.github/go-test-problem-matcher.json"
       - name: run test
         run: |
           go test
