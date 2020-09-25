@@ -14,4 +14,6 @@ jobs:
       - name: set env
         run: |
           echo ::set-env name=REVISION_TAG::${{ github.sha }}-$(TZ=Asia/Tokyo date +%Y%m%d%H%M%S)
-      - run: echo AppSpec-${{ env.REVISION_TAG }}.yaml
+      - run: |
+          echo \
+            AppSpec-${{ env.REVISION_TAG }}.yaml
