@@ -9,9 +9,7 @@ jobs:
     name: bar
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: set env
+      - name: sleep and echo
         run: |
-          OSVER=$(cat /etc/os-release)
-          echo $OSVER
+          sleep 60
+          echo "finished"
