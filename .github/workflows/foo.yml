@@ -21,4 +21,5 @@ jobs:
             mv /tmp/tfstate-lookup/tfstate-lookup ~/bin/tfstate-lookup
             chmod +x ~/bin/tfstate-lookup
           fi
+          ls -al ~/bin
           sudo install ~/bin/tfstate-lookup /usr/local/bin
