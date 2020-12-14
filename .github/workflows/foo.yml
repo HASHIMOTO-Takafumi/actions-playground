@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: install tfstate-lookup
         run: |
-          if [[ ! ~/bin/tfstate-lookup ]]; then
+          if [[ ! -e ~/bin/tfstate-lookup ]]; then
             mkdir -p /tmp/tfstate-lookup
             cd /tmp/tfstate-lookup
             wget https://github.com/fujiwara/tfstate-lookup/releases/download/v0.0.13/tfstate-lookup_0.0.14_linux_amd64.tar.gz
