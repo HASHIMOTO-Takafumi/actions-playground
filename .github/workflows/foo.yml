@@ -9,7 +9,16 @@ jobs:
     name: bar
     runs-on: ubuntu-latest
     steps:
-      - name: sleep and echo
+      - name: install tfstate-lookup
         run: |
-          sleep 30
-          echo "finished"
+          if [[ ! ~/bin/tfstate-lookup ]]; then
+            mkdir -p /tmp/tfstate-lookup
+            cd /tmp/tfstate-lookup
+            wget https://github.com/fujiwara/tfstate-lookup/releases/download/v0.0.13/tfstate-lookup_0.0.14_linux_amd64.tar.gz
+            tar xzvf tfstate-lookup_0.0.14_linux_amd64.tar.gz
+
+            mkdir -p ~/bin
+            mv /tmp/tfstate-lookup/tfstate-lookup ~/bin/tfstate-lookup
+            chmod +x ~/bin/tfstate-lookup
+          fi
+          sudo install ~/bin/tfstate-lookup /usr/local/bin
