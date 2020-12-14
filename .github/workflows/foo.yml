@@ -14,7 +14,7 @@ jobs:
           if [[ ! -e ~/bin/tfstate-lookup ]]; then
             mkdir -p /tmp/tfstate-lookup
             cd /tmp/tfstate-lookup
-            wget https://github.com/fujiwara/tfstate-lookup/releases/download/v0.0.13/tfstate-lookup_0.0.14_linux_amd64.tar.gz
+            wget https://github.com/fujiwara/tfstate-lookup/releases/download/v0.0.14/tfstate-lookup_0.0.14_linux_amd64.tar.gz
             tar xzvf tfstate-lookup_0.0.14_linux_amd64.tar.gz
 
             mkdir -p ~/bin
